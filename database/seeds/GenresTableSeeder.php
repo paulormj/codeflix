@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class GenderSeeder extends Seeder
+class GenresTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class GenderSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Models\Genre::class,100)->create();
     }
 }

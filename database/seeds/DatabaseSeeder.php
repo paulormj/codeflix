@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Gender;
+use App\Models\Genre;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(CategoriesTableSeeder::class);
-        $this->call(GendersTableSeeder::class);
+        $this->call(GenresTableSeeder::class);
         // $this->call(UsersTableSeeder::class);
     }
 }
