@@ -38,4 +38,8 @@ class Genre extends Model
 
     public $incrementing=false;
     protected $keyType='string';
+
+    protected $casts = [
+        'is_active' => 'boolean'
+    ];
 }
