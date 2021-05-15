@@ -43,6 +43,7 @@ class Category extends Model
     protected $keyType='string';
 
     protected $casts = [
+        'id'=>'string',
         'is_active' => 'boolean'
     ];
 }  
