@@ -18,6 +18,14 @@ class GenreTest extends TestCase
     factory(Genre::class,1)->create();
     $genre = Genre::all();
     $this->assertCount(1,$genre);
+
+    $genreKey = array_keys($genre->first()->getAttributes());
+        $this->assertEqualsCanonicalizing(
+            [
+                'id', 'name', 'is_active', 'created_at', 'updated_at', 'deleted_at'
+            ],
+            $genreKey
+        );
   }
 
   public function testCreate(){
@@ -36,7 +44,12 @@ class GenreTest extends TestCase
     ]);
       $this->assertFalse($genre->is_active);
 
-
+      $this->assertEquals(36, strlen($genre->id)); 
+      
+      $genre = Genre::create([
+        'name' => 'test1', 'is_active' => true
+    ]);
+    $this->assertTrue($genre->is_active);
   }
 
   public function testUpdate(){

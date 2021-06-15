@@ -62,6 +62,9 @@ class CategoryTest extends TestCase
         ]);
         $this->assertTrue($category->is_active);
 
+        $this->assertEquals(36, strlen($category->id));
+
+
     }
 
     public function testUpdate(){
