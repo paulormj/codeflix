@@ -3,6 +3,7 @@
 namespace Tests\Stubs\Controllers;
 
 use App\Http\Controllers\Api\BasicCrudController;
+use phpDocumentor\Reflection\Types\Nullable;
 use Tests\Stubs\Models\CategoryStub;
 
 class CategoryControllerStub extends BasicCrudController
@@ -15,7 +16,8 @@ class CategoryControllerStub extends BasicCrudController
   protected function rulesStore()
   {
      return [
-      'name' => 'required | max:255'
+      'name' => 'required | max:255',
+      'description' => 'nullable'
     ];
 
 
